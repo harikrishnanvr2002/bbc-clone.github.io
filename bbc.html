@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBC Inspired Homepage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            background-color: #222;
+            padding: 10px;
+        }
+
+        .navbar-brand, .navbar-nav .nav-link {
+            color: #fff !important;
+            font-weight: bold;
+        }
+
+        /* Main Content */
+        .news-container {
+            margin-top: 20px;
+        }
+
+        /* Left Column */
+        .left-news img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .left-news h5 {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .left-news p {
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .center-feature img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .center-feature h5 {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .live-label {
+            color: #d00000;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .center-feature p {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .right-news h5 {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .right-news p {
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .right-news small {
+            display: block;
+            color: #666;
+            margin-top: 5px;
+            font-size: 0.8rem;
+        }
+
+        /* Divider  */
+        .news-divider {
+            border-top: 1px solid #ddd;
+            margin: 15px 0;
+        }
+        
+
+        /* "Only from the BBC"*/
+        .bbc-only-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #ccc;
+        }
+
+        .bbc-only-section h4 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .bbc-article {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+        }
+
+        .bbc-article img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .bbc-article h5 {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .bbc-article p {
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .bbc-article small {
+            color: #666;
+            font-size: 0.8rem;
+        }
+        
+        /* More News*/
+        .more-news {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #ccc;
+        }
+
+        .more-news h4 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .more-news .news-item {
+            margin-bottom: 30px;
+        }
+
+        .more-news img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        /* Must Watch */
+        .must-watch h4 {
+            margin-top: 30px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        h5 a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+        }
+
+        h5 a:hover {
+            color: #007bff; 
+            text-decoration: underline;
+        }
+
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        .collapse.show .navbar-nav {
+            width: 100%;
+        }
+        
+    </style>
+</head>
+<body>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">BBC</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">News</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">US Election</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Sport</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">More</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Main Content -->
+    <div class="container news-container">
+        <div class="row">
+            <!-- Left News -->
+            <div class="col-md-4 left-news">
+                <div class="mb-4">
+                    <img src="https://ichef.bbci.co.uk/news/1536/cpsprodpb/db8f/live/178cec50-864d-11ef-9329-f30486eb2a33.jpg.webp" alt="Left News Image">
+                    <h5><a href="#">Different lives - Harris and Trump as you've never seen them before</a></h5>
+                    <p>Born decades and thousands of miles apart - a visual look at the lives of the presidential rivals.</p>
+                    <small>4 hrs ago | US & Canada</small>
+                </div>
+                <div>
+                    <img src="https://ichef.bbci.co.uk/ace/standard/1536/cpsprodpb/6912/live/66e12ce0-9830-11ef-82c3-45a801b7330b.jpg.webp" alt="Left News Image 2">
+                    <h5><a href="#">Path to 270: The states Harris and Trump need</a></h5>
+                    <p>Explore the key battleground states and strategies for victory in the US election.</p>
+                    <small>5 hrs ago | US Politics</small>
+                </div>
+            </div>
+
+            <!-- Center Feature News Column -->
+            <div class="col-md-4 center-feature">
+                <img src="https://ichef.bbci.co.uk/ace/standard/1536/cpsprodpb/fae2/live/f9076ac0-983b-11ef-9260-19e6a950e830.jpg.webp" alt="Main Feature News">
+                <h5><a href="#"><span class="live-label">LIVE</span> More than 66 million votes cast in US election as Harris and Trump target Wisconsin</a></h5>
+                <p>Both candidates will hold rallies in Wisconsin, with the stakes growing higher as election day approaches.</p>
+                <div></div>
+                <h5><a href="#"><span >LIVE</span> More than 200 killed in Valencia floods</a></h5>
+                <p>The city of Cartaya in Huelva has seen two months' worth of rain in just ten hours.</p>
+                <small>2 hrs ago | World</small>
+            </div>
+
+            <!-- Right News Column -->
+            <div class="col-md-4 right-news">
+                <div class="news-divider"></div>
+                <h5><a href="#"><span class="live-label">LIVE</span> More than 200 killed in Valencia floods</a></h5>
+                <p>The city of Cartaya in Huelva has seen two months' worth of rain in just ten hours.</p>
+                <small>2 hrs ago | World</small>
+
+                <div class="news-divider"></div>
+                <h5><a href="#">What happened to the young girl captured in a photograph of Gaza detainees</a></h5>
+                <p>Julia, aged three, looks on from a crowd of exhausted men. Her story unfolds.</p>
+                <small>8 hrs ago | Middle East</small>
+
+                <div class="news-divider"></div>
+                <h5><a href="#">Moment police tackle teen accused of deadly Halloween shooting</a></h5>
+                <p>Video captures the chaotic aftermath of a Halloween shooting in Orlando's streets.</p>
+                <small>6 hrs ago | US & Canada</small>
+
+                <div class="news-divider"></div>
+                <h5><a href="#">Moment police tackle teen accused of deadly Halloween shooting</a></h5>
+                <p>Video captures the chaotic aftermath of a Halloween shooting in Orlando's streets.</p>
+                <small>6 hrs ago | US & Canada</small>
+            </div>
+        </div>
+
+        <!-- "Only from the BBC" -->
+        <div class="bbc-only-section">
+            <h4>Only from the BBC</h4>
+            <div class="row">
+                <!-- Left Article -->
+                <div class="col-md-6 bbc-article">
+                    <img src="https://ichef.bbci.co.uk/images/ic/1920x1080/p0k1hjhj.jpg.webp" alt="BBC Exclusive Image 1">
+                    <h5><a href="#">12 of the best films to watch this November</a></h5>
+                    <p>From the big-screen debut of a musical theatre classic to the long-awaited sequel to Ridley Scott's Roman epic, these are the films to see this month.</p>
+                    <small>7 hrs ago | Culture</small>
+                </div>
+
+                <!-- Right Article -->
+                <div class="col-md-6 bbc-article">
+                    <img src="https://ichef.bbci.co.uk/images/ic/1024xn/p0k1jl2v.jpg.webp" alt="BBC Exclusive Image 2">
+                    <h5><a href="#">How Brazil's President could lose the election</a></h5>
+                    <p>A look at the unexpected twists in Brazil's election as Bolsonaro faces off against Lula.</p>
+                    <small>4 hrs ago | Americas</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- More News -->
+        <div class="more-news">
+            <h4>More News</h4>
+            <div class="row">
+                <div class="col-md-4 news-item">
+                    <img src="https://ichef.bbci.co.uk/news/1024/cpsprodpb/cdf3/live/24c03180-986c-11ef-9a64-e3368355d750.jpg.webp" alt="More News Image 1">
+                    <h5><a href="#">What is the future for electric cars?</a></h5>
+                    <p>A look at the sustainability of electric cars and the challenges ahead.</p>
+                    <small>12 hrs ago | Business</small>
+                </div>
+                <div class="col-md-4 news-item">
+                    <img src="https://ichef.bbci.co.uk/images/ic/raw/p0jq6tfl.jpg.webp" alt="More News Image 2">
+                    <h5><a href="#">Inside the world of AI art</a></h5>
+                    <p>Exploring the rise of AI-generated art and its implications for traditional artists.</p>
+                    <small>10 hrs ago | Technology</small>
+                </div>
+                <div class="col-md-4 news-item">
+                    <img src="https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/1dc1/live/93eee570-97d5-11ef-9096-efc76adbeebc.jpg.webp" alt="More News Image 3">
+                    <h5><a href="#">Climate change: What the world is doing to combat it</a></h5>
+                    <p>A review of global efforts to address climate change and their effectiveness.</p>
+                    <small>9 hrs ago | Environment</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Green Gateway  -->
+<div class="green-gateway d-flex align-items-center" style="margin-top: 30px; padding: 20px;">
+    <div class="col-md-10">
+        <img src="https://ichef.bbci.co.uk/images/ic/1376x774/p0jybjkq.jpg.webp" alt="Green Gateway" class="img-fluid" >
+    </div>
+    <div class="col-md-4">
+        <h4 class="font-weight-bold">Embrace a Greener Future</h4>
+        <p style="font-size: 1rem; color: #333;">Discover the latest innovations in sustainable living and how you can contribute to a healthier planet.</p>
+        <a href="#" class="btn btn-success">More</a>
+    </div>
+</div>
+
+<div class="green-gateway d-flex align-items-center" style="margin-top: 30px; padding: 20px;">
+    <div class="col-md-10">
+        <img src="https://ichef.bbci.co.uk/news/1536/cpsprodpb/345c/live/01db5280-9849-11ef-8538-e1655f5a8342.png.webp" alt="Green Gateway" class="img-fluid" >
+    </div>
+    <div class="col-md-4">
+        <h4 class="font-weight-bold">Embrace a Greener Future</h4>
+        <p style="font-size: 1rem; color: #333;">Discover the latest innovations in sustainable living and how you can contribute to a healthier planet.</p>
+        <a href="#" class="btn btn-success">More</a>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="section-title">Culture</div>
+            <ul class="list-unstyled">
+                <li><a href="#" class="article-title">12 of the best films to watch this November</a></li>
+                <li><a href="#" class="article-title">Andy Warhol artworks stolen in Dutch gallery heist</a></li>
+                <li><a href="#" class="article-title">The Cure's Robert Smith: 'Singing new album live helps me grieve'</a></li>
+            </ul>
+        </div>
+       
+        <div class="col-md-3">
+            <div class="section-title">Travel</div>
+            <ul class="list-unstyled">
+                <li><a href="#" class="article-title">The world's adventure capital's massive gamble</a></li>
+                <li><a href="#" class="article-title">The curious appeal of haunted hotels</a></li>
+                <li><a href="#" class="article-title">Is this the true birthplace of Halloween?</a></li>
+            </ul>
+        </div>
+       
+        <div class="col-md-3">
+            <div class="section-title">Earth</div>
+            <ul class="list-unstyled">
+                <li><a href="#" class="article-title">The US island ruled by alien snakes and spiders</a></li>
+                <li><a href="#" class="article-title">Study reveals 14 bat species on safari park estate</a></li>
+                <li><a href="#" class="article-title">Spain mourns as death toll passes 150 in catastrophic floods</a></li>
+            </ul>
+        </div>
+        
+        <div class="col-md-3">
+            <div class="section-title">World of Wonder</div>
+            <ul class="list-unstyled">
+                <li><a href="#" class="article-title">Father penguin uses unique call to distinguish chick</a></li>
+                <li><a href="#" class="article-title">Bulgaria's valley of Thracian Kings and Damask roses</a></li>
+                <li><a href="#" class="article-title">The Bahamas: The last lighthouse of its kind</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+ <!-- Font Awesome link -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <style>
+    
+     .navbar-brand, .navbar-nav .nav-link {
+         color: rgb(239, 237, 237) !important;
+     }
+     .dropdown-menu {
+         width: 100%;
+     }
+ </style>
+</head>
+
+<!-- Footer -->
+<footer class="bg-light text-center text-dark mt-5">
+ <div class="container pt-4">
+     <!-- BBC Logo and Links -->
+     <div class="row">
+         <div class="col-md-12">
+             <h6>BBC</h6>
+             <nav class="nav justify-content-center">
+                 <a class="nav-link text-dark" href="#">Home</a>
+                 <a class="nav-link text-dark" href="#">News</a>
+                 <a class="nav-link text-dark" href="#">US Election</a>
+                 <a class="nav-link text-dark" href="#">Sport</a>
+                 <a class="nav-link text-dark" href="#">Business</a>
+                 <a class="nav-link text-dark" href="#">Innovation</a>
+                 <a class="nav-link text-dark" href="#">Culture</a>
+                 <a class="nav-link text-dark" href="#">Arts</a>
+                 <a class="nav-link text-dark" href="#">Travel</a>
+                 <a class="nav-link text-dark" href="#">Earth</a>
+                 <a class="nav-link text-dark" href="#">Live</a>
+                 <a class="nav-link text-dark" href="#">Audio</a>
+                 <a class="nav-link text-dark" href="#">Weather</a>
+            
+             </nav>
+         </div>
+     </div>
+     
+     <!-- Links -->
+     <div class="row mt-3">
+         <div class="col-md-12">
+             <p>Follow BBC on:</p>
+             <a href="#"><i class="fab fa-facebook fa-lg mx-2"></i></a>
+             <a href="#"><i class="fab fa-twitter fa-lg mx-2"></i></a>
+             <a href="#"><i class="fab fa-instagram fa-lg mx-2"></i></a>
+             <a href="#"><i class="fab fa-tiktok fa-lg mx-2"></i></a>
+             <a href="#"><i class="fab fa-youtube fa-lg mx-2"></i></a>
+         </div>
+     </div>
+    
+     <div class="row mt-3">
+         <div class="col-md-12">
+             <a href="#" class="text-dark">Terms of Use</a> |
+             <a href="#" class="text-dark">About the BBC</a> |
+             <a href="#" class="text-dark">Privacy Policy</a> |
+             <a href="#" class="text-dark">Cookies</a> |
+             <a href="#" class="text-dark">Accessibility Help</a> |
+             <a href="#" class="text-dark">Contact the BBC</a> |
+             <a href="#" class="text-dark">Advertise with us</a> |
+             <a href="#" class="text-dark">Do not share or sell my info</a> |
+             <a href="#" class="text-dark">Contact technical support</a>
+         </div>
+     </div>
+ </div>
+
+ <div class="text-center py-3">
+     <small>Copyright 2024 BBC. All rights reserved. The BBC is not responsible for the content of external sites. <a href="#" class="text-dark">Read about our approach to external linking.</a></small>
+ </div>
+</footer>
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      
+
+</body>
+</html>   // update this code make the nav bar resposive on small screens  
